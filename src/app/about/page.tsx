@@ -5,11 +5,12 @@ import { motion } from "framer-motion";
 import { 
   Shield, Eye, Award, CheckCircle, Code, PieChart, UserCheck, 
   ArrowRight, Users, Network, Globe, TrendingUp,
-  Calendar, User, Cpu, ShieldAlert 
+  Calendar, User, Cpu, ShieldAlert, Sparkles, Briefcase, ChevronRight
 } from "lucide-react";
 import { useBooking } from "@/context/BookingContext";
 import Link from "next/link";
 import Image from "next/image";
+import { teamMembers } from "@/data/team";
 
 export default function About() {
   const { openBooking } = useBooking();
@@ -96,7 +97,7 @@ export default function About() {
               Technology Solutions Engineered <br className="hidden md:inline"/>
               for Enterprise Scale
             </h1>
-            <p className="text-[14px] md:text-[16px] text-slate-300 leading-relaxed max-w-[800px] mx-auto mb-8">
+            <p className="text-[14px] md:text-[16px] text-slate-300 leading-relaxed max-w-[800px] mx-auto mb-8 font-medium">
               Providing high-performance software engineering, robust cybersecurity systems, and data-led acquisition loops.
             </p>
           </motion.div>
@@ -156,7 +157,7 @@ export default function About() {
             </div>
           </div>
 
-          {/* Right Image/Vibe collage - Unique styled image container with interactive overlays */}
+          {/* Right Image/Vibe collage */}
           <div className="lg:col-span-6">
             <motion.div
               initial={{ opacity: 0, scale: 0.98 }}
@@ -171,7 +172,7 @@ export default function About() {
                   alt="DIGINET IT Collaboration Team"
                   fill
                   className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                  sizes="(max-w-720px) 100vw, 600px"
+                  sizes="(max-width: 720px) 100vw, 600px"
                   priority
                 />
                 <div className="absolute inset-0 bg-slate-950/10 z-10 transition-opacity duration-300 group-hover:opacity-0" />
@@ -253,7 +254,87 @@ export default function About() {
       </section>
 
       {/* ==========================================
-          4. HISTORY TIMELINE SECTION (Dark theme)
+          4. CLEAN MINIMALIST LEADERSHIP TEAM SECTION
+          ========================================== */}
+      <section className="py-24 px-6 md:px-12 bg-white relative z-10 border-b border-slate-200/60">
+        <div className="max-w-[1280px] mx-auto">
+          {/* Header */}
+          <div className="text-left max-w-3xl mb-16">
+            <span className="text-[11px] font-extrabold uppercase tracking-[0.25em] text-slate-400 mb-2 block font-poppins">
+              THE EXPERTS
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-slate-900 font-poppins leading-tight mb-3">
+              Our Leadership Team
+            </h2>
+            <p className="text-slate-500 text-sm sm:text-base font-medium">
+              Driven by experience, led by visionaries. Click any leader to read their full bio.
+            </p>
+          </div>
+
+          {/* Clean Leadership Circular Row / Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 lg:gap-16 max-w-5xl mx-auto">
+            {teamMembers.map((member, idx) => (
+              <motion.div
+                key={member.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: idx * 0.12 }}
+                className="flex flex-col items-center text-center"
+              >
+                <Link href={`/about/team/${member.slug}`} className="group block text-center cursor-pointer">
+                  {/* Clean Circular Headshot */}
+                  <div className="relative w-44 h-44 sm:w-48 sm:h-48 rounded-full overflow-hidden bg-gradient-to-b from-rose-50/80 via-slate-100 to-slate-200 shadow-md group-hover:shadow-xl group-hover:scale-105 transition-all duration-500 mx-auto mb-5 p-1 border border-slate-200/80">
+                    <div className="relative w-full h-full rounded-full overflow-hidden">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover transition-transform duration-500"
+                        style={{
+                          objectPosition: member.imagePosition || "center top",
+                          transform: `scale(${member.imageScale ?? 1}) translate(${member.imageOffset?.x ?? 0}px, ${member.imageOffset?.y ?? 0}px)`,
+                        }}
+                        sizes="(max-width: 768px) 176px, 192px"
+                        priority
+                      />
+                    </div>
+                  </div>
+
+                  {/* Name */}
+                  <h3 className="text-lg sm:text-xl font-bold text-slate-900 group-hover:text-cyan-600 transition-colors font-poppins mb-1">
+                    {member.name}
+                  </h3>
+
+                  {/* Role / Position */}
+                  <p className="text-xs sm:text-sm font-semibold text-rose-500 leading-snug mb-3">
+                    {member.role}
+                  </p>
+
+                  {/* LinkedIn Icon */}
+                  <div className="pt-1">
+                    <a
+                      href={member.linkedin}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="w-7 h-7 rounded-md bg-slate-100 text-slate-400 hover:bg-[#0A66C2] hover:text-white transition-all duration-300 flex items-center justify-center mx-auto shadow-xs cursor-pointer relative z-10"
+                      title={`View ${member.name}'s LinkedIn Profile`}
+                    >
+                      <svg className="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+                        <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+                      </svg>
+                    </a>
+                  </div>
+                </Link>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ==========================================
+          5. HISTORY TIMELINE SECTION (Dark theme)
           ========================================== */}
       <section className="py-24 px-6 md:px-12 bg-[#06142D] text-white border-t border-slate-800 relative">
         <div className="absolute inset-0 pointer-events-none">
@@ -304,7 +385,7 @@ export default function About() {
         </div>
 
         {/* ==========================================
-            5. OUTREACH BY THE NUMBERS (Inside Dark section)
+            6. OUTREACH BY THE NUMBERS (Inside Dark section)
             ========================================== */}
         <div className="max-w-[1280px] mx-auto mt-32 border-t border-slate-800 pt-20">
           <div className="text-center mb-16">
@@ -339,7 +420,7 @@ export default function About() {
       </section>
 
       {/* ==========================================
-          6. WHAT'S GOING ON (Articles/Insights)
+          7. WHAT'S GOING ON (Articles/Insights)
           ========================================== */}
       <section className="py-24 px-6 md:px-12 bg-white relative">
         <div className="max-w-[1280px] mx-auto">
@@ -396,7 +477,7 @@ export default function About() {
       </section>
 
       {/* ==========================================
-          7. CTA BANNER
+          8. CTA BANNER
           ========================================== */}
       <section 
         className="py-28 px-6 md:px-12 text-white border-t border-slate-900 relative overflow-hidden bg-cover bg-center"
