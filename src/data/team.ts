@@ -24,6 +24,7 @@ export interface TeamMember {
 }
 
 export const teamMembers: TeamMember[] = [
+  /* Temporarily removed Suman Singh from Our Team as requested
   {
     id: "suman-singh",
     slug: "suman-singh",
@@ -50,7 +51,8 @@ export const teamMembers: TeamMember[] = [
       "Established Diginet's core leadership philosophy combining commercial pragmatism and cultural sensibility."
     ],
     quote: "Technology, at its most compelling, is inseparable from culture, aesthetics, and the texture of everyday human life."
-  },
+  }
+  */
   {
     id: "vijayant-tripathi",
     slug: "vijayant-tripathi",
