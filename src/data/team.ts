@@ -100,7 +100,7 @@ export const teamMembers: TeamMember[] = [
     skills: ["Enterprise Architecture", "BFSI Systems Modernization", "Agentic AI Solutions", "Cloud-Native Microservices", "API-First SaaS Platforms"],
     experienceYears: "18+ Years",
     email: "g.sethi@diginet.com",
-    linkedin: "https://linkedin.com",
+    linkedin: "https://www.linkedin.com/company/diginet-solutions-pte-ltd/",
     keyAchievements: [
       "Led full cloud-native microservice transformations of enterprise BFSI trade finance platforms.",
       "Pioneered agentic AI solutions that enhance automated decision-making and operational efficiency.",

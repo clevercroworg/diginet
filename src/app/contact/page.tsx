@@ -43,7 +43,7 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    service: "cybersecurity",
+    service: "",
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "submitting" | "success">("idle");
@@ -56,7 +56,7 @@ export default function Contact() {
     // Simulate API pipeline transmission
     setTimeout(() => {
       setStatus("success");
-      setFormData({ name: "", email: "", service: "cybersecurity", message: "" });
+      setFormData({ name: "", email: "", service: "", message: "" });
     }, 1500);
   };
 
@@ -152,10 +152,12 @@ export default function Contact() {
                         <div className="relative">
                           <select
                             id="service"
+                            required
                             value={formData.service}
                             onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                             className="w-full px-4 py-3 rounded-xl border border-slate-200 bg-white text-slate-800 focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 text-xs font-semibold appearance-none cursor-pointer transition-all shadow-sm"
                           >
+                            <option value="" disabled>Select a service</option>
                             <option value="cybersecurity">Cybersecurity Solutions</option>
                             <option value="web-development">Web Development</option>
                             <option value="mobile-development">Mobile Development</option>

@@ -19,9 +19,31 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "DIGINET | Corporate IT Solutions & Digital Services",
-  description: "DIGINET is a premier IT consulting and digital marketing agency offering high-end cybersecurity, custom web development, and mobile app engineering.",
-  keywords: ["IT Solutions", "Digital Marketing", "Cybersecurity", "Web Development", "Mobile App Development"],
+  title: {
+    default: "DIGINET | Corporate IT Solutions & Digital Services",
+    template: "%s | DIGINET",
+  },
+  description: "DIGINET is a premier global IT consulting and digital marketing agency offering high-end cybersecurity, custom web development, mobile app engineering, and cloud infrastructure.",
+  keywords: [
+    "DIGINET",
+    "IT Solutions",
+    "Digital Marketing",
+    "Cybersecurity",
+    "Web Development",
+    "Mobile App Development",
+    "IT Services Singapore",
+    "IT Consultancy",
+    "Zero Trust Security"
+  ],
+  metadataBase: new URL("https://www.diginet.sg"),
+  openGraph: {
+    title: "DIGINET | Corporate IT Solutions & Digital Services",
+    description: "Premier global technology consulting and digital growth agency delivering enterprise cybersecurity, web architecture, and application development.",
+    url: "https://www.diginet.sg",
+    siteName: "DIGINET",
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
