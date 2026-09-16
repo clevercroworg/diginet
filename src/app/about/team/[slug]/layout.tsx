@@ -1,5 +1,11 @@
 import type { Metadata } from "next";
-import { getTeamMemberBySlug } from "@/data/team";
+import { getTeamMemberBySlug, teamMembers } from "@/data/team";
+
+export function generateStaticParams() {
+  return teamMembers.map((member) => ({
+    slug: member.slug,
+  }));
+}
 
 interface LayoutProps {
   params: Promise<{ slug: string }>;

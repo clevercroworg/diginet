@@ -107,6 +107,36 @@ export const teamMembers: TeamMember[] = [
       "Architected secure, compliant, and future-ready API-first SaaS infrastructures."
     ],
     quote: "Aligning technology strategy with business outcomes creates secure, compliant, and future-ready enterprise platforms."
+  },
+  {
+    id: "rita-sharma",
+    slug: "rita-sharma",
+    name: "Rita Sharma",
+    role: "Global Head of HR",
+    department: "Human Resources & Talent Development",
+    shortBio: "Over 10 years of international experience in people development, talent capability building, and organizational learning across Singapore and India, leading DigiNet's global people strategy.",
+    fullBio: [
+      "Rita brings over 10 years of international experience in people development, talent capability building, and organizational learning across Singapore and India. As Global Head of HR at DigiNet Solutions, she leads the company's global people strategy — talent development, capability building, and organizational culture — supporting its cybersecurity, cloud, infrastructure, and application development practices across geographies.",
+      "Prior to joining DigiNet, Rita held international leadership roles spanning education and organizational development. As Senior Coordinator & International Programme Lead at Doon Public School, she led global collaboration initiatives across three continents, working with partner organizations and mentoring 25+ professionals through coaching and structured development programmes. Earlier, as Primary Years Academic Lead at DPS International School, Singapore, she led people and curriculum strategy for a multicultural organization of 800+ people, driving a 60% increase in digital adoption and strengthening cross-cultural collaboration and alignment.",
+      "Rita's strengths lie in global talent strategy, learning needs analysis, stakeholder engagement across regions, and building collaborative, high-performance cultures — skills she now applies to shaping DigiNet's global people agenda, from talent development to organizational capability building. She holds an MBA from Sikkim Manipal University and has completed leadership and strategy certifications through the British Council and Workforce Singapore (WSG).",
+      "Based in Bengaluru, Rita is passionate about building people-first cultures that empower employees globally through structured development, cross-border collaboration, and future-ready practices."
+    ],
+    image: "/images/team/rita_sharma.jpeg",
+    imageScale: 1,
+    imagePosition: "center top",
+    imageOffset: { x: 0, y: 0 },
+    skills: ["Global Talent Strategy", "People & Culture", "Capability Building", "Organizational Learning", "Cross-Border Leadership"],
+    experienceYears: "10+ Years",
+    education: "MBA, Sikkim Manipal University",
+    certifications: "Leadership and Strategy (British Council & Workforce Singapore)",
+    email: "r.sharma@diginet.com",
+    linkedin: "https://www.linkedin.com/company/diginet-solutions-pte-ltd/",
+    keyAchievements: [
+      "Leads DigiNet's global people strategy, talent development, and organizational culture across geographies.",
+      "Spearheaded international collaboration initiatives across three continents and mentored 25+ professionals.",
+      "Led people and curriculum strategy for an 800+ person multicultural organization in Singapore, driving a 60% increase in digital adoption."
+    ],
+    quote: "Building people-first cultures that empower employees globally through structured development, cross-border collaboration, and future-ready practices."
   }
 ];
 
